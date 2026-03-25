@@ -202,7 +202,7 @@ def main():
                         "content": str(result)
                     })
                 # 循环继续，把执行结果发给 AI 让他继续思考
-            else:
+            el
                 # 任务完成，没有工具调用了，打印最终文字回复
                 if response_message.content:
                     print(f"\n🤖 AI: {response_message.content}")
