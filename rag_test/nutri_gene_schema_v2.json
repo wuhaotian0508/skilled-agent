@@ -1,0 +1,2650 @@
+{
+  "CommonGeneExtraction": {
+    "$defs": {
+      "CommonGene": {
+        "description": "Individual gene object for common fuction in nutrient metabolism",
+        "properties": {
+          "Gene_Name": {
+            "title": "Gene_Name",
+            "description": "The name or symbol of the Core Gene, e.g., TaGS5, Pi2, BIK1.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Accession_Number": {
+            "title": "Gene_Accession_Number",
+            "description": "Accession Number (e.g., NCBI, Ensembl, Phytozome ID, LOC_*, AT*, NCBI Locus Tag). Some IDs may be in figures or tables.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Protein_Family_or_Domain": {
+            "title": "Protein_Family_or_Domain",
+            "description": "Protein family, enzyme class, TF family, domain architecture, or conserved motif relevant to the gene\u2019s function.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Reference_Genome_Version": {
+            "title": "Reference_Genome_Version",
+            "description": "The reference genome version on which the coordinates are based, e.g., TAIR10, IRGSP-1.0, IWGSC1.0, GRCm39, GRCh38, ASM584v2.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species": {
+            "title": "Species",
+            "description": "The main species studied (common name). e.g., Rice, Mouse, E. coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species_Latin_Name": {
+            "title": "Species_Latin_Name",
+            "description": "The Latin name of the species, e.g., Oryza sativa, Mus musculus, Escherichia coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Variety": {
+            "title": "Variety",
+            "description": "The specific variety or cultivar used in the study (e.g., Nipponbare, Zhonghua 11).",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Origin_Species": {
+            "title": "Gene_Origin_Species",
+            "description": "Species in which the gene is naturally found or from which it was derived.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Phenotypic_Effect": {
+            "title": "Core_Phenotypic_Effect",
+            "description": "The main conclusion about how the focal gene affects the target metabolite/product, e.g. promotes \u03b2-carotene accumulation; reduces phytic acid content; increases oleic acid proportion.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite": {
+            "title": "Terminal_Metabolite",
+            "description": "The primary terminal metabolite, e.g., \u03b2-carotene, anthocyanin, folate, tocopherol, lysine, oleic acid, resistant starch, iron, zinc, glucosinolate.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Class": {
+            "title": "Terminal_Metabolite_Class",
+            "description": "Broad biochemical class of the terminal metabolite, e.g., carotenoid, flavonoid, vitamin, fatty acid, amino acid, alkaloid, terpenoid, polysaccharide, mineral nutrient.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Accumulation_Site": {
+            "title": "Terminal_Metabolite_Accumulation_Site",
+            "description": "Accumulation organs for terminal metabolite within a species (Note: This must be distinguished from the compound content of the species itself.)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Function": {
+            "title": "Terminal_Metabolite_Function",
+            "description": "The functions of the terminal metabolite, e.g., resistance to stress, drought, cold, pests, etc., or the treatment or alleviation of human diseases.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Promoters": {
+            "title": "Promoters",
+            "description": "Promoters and Their Types (Constitutive or Tissue-Specific)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Expression_Pattern": {
+            "title": "Expression_Pattern",
+            "description": "Tissues, developmental stages, or conditions with high gene expression, e.g., root, stress, or pathogen response.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Subcellular_Localization": {
+            "title": "Subcellular_Localization",
+            "description": "The location of the protein within the cell or subcellular fraction, e.g., Nucleus, Cell membrane, Chloroplast, Microsome.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Interacting_Proteins": {
+            "title": "Interacting_Proteins",
+            "description": "Experimentally validated interacting proteins or genes (list protein or gene name or ID, separated by semicolon ';').",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Validation_Method": {
+            "title": "Core_Validation_Method",
+            "description": "Most critical functional validation approaches supporting the gene\u2013metabolite mapping, e.g., knockout, overexpression, complementation, enzyme assay, transactivation assay, transient expression, metabolite profiling, isotope labeling.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Omics_Data": {
+            "title": "Omics_Data",
+            "description": "List the omics data types used in the study (e.g., RNA-seq, resequencing, metabolomics, single-cell) and their corresponding database accession numbers.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Environment_or_Treatment_Factor": {
+            "title": "Environment_or_Treatment_Factor",
+            "description": "Environmental or treatment conditions directly affecting interpretation of the metabolic effect, e.g., light, temperature, nutrient supply, elicitor treatment, salt stress, pathogen infection, exogenous hormone, postharvest treatment.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Breeding_Application_Value": {
+            "title": "Breeding_Application_Value",
+            "description": "Stated or inferred breeding relevance of the gene for nutritional improvement, biofortification, quality enhancement, or metabolic engineering.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Potential_Tradeoffs": {
+            "title": "Potential_Tradeoffs",
+            "description": "Growth penalty, yield change, stress susceptibility, off-target metabolic shifts.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Summary_Key_Findings_of_Core_Gene": {
+            "title": "Summary_Key_Findings_of_Core_Gene",
+            "description": "Main findings in numbered format: '1. ... 2. ... 3. ...'. Focus on nutrient metabolism causality.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Other_Important_Info": {
+            "title": "Other_Important_Info",
+            "description": "Important metabolism-related details not captured elsewhere, such as contradictory evidence, species-specific nuances, dual function, uncertain catalytic assignment, tissue-specific pathway divergence, or special caveats.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          }
+        },
+        "title": "CommonGene",
+        "type": "object"
+      }
+    },
+    "description": "Complete model for extracting common gene function information from nutrient metabolism studies.",
+    "properties": {
+      "Title": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The full title of the paper.",
+        "title": "Title"
+      },
+      "Journal": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The name of the journal that published the paper.",
+        "title": "Journal"
+      },
+      "DOI": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The DOI number of the literature, excluding any URL prefix (e.g., \"https://doi.org/\"). Only extract the pure DOI string, e.g., 10.1016/j.plantsci.2024.111234.",
+        "title": "Doi"
+      },
+      "Genes": {
+        "description": "List of gene objects extracted from this study. Each gene object contains all gene-specific information including species information.",
+        "items": {
+          "$ref": "#/$defs/CommonGene"
+        },
+        "title": "Genes",
+        "type": "array"
+      }
+    },
+    "title": "CommonGeneExtraction",
+    "type": "object"
+  },
+  "PathwayGeneExtraction": {
+    "$defs": {
+      "PathwayGene": {
+        "description": "Individual gene object for pathway fuction in nutrient metabolism",
+        "properties": {
+          "Gene_Name": {
+            "title": "Gene_Name",
+            "description": "The name or symbol of the Core Gene, e.g., TaGS5, Pi2, BIK1.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Accession_Number": {
+            "title": "Gene_Accession_Number",
+            "description": "Accession Number (e.g., NCBI, Ensembl, Phytozome ID, LOC_*, AT*, NCBI Locus Tag). Some IDs may be in figures or tables.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Protein_Family_or_Domain": {
+            "title": "Protein_Family_or_Domain",
+            "description": "Protein family, enzyme class, TF family, domain architecture, or conserved motif relevant to the gene\u2019s function.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Reference_Genome_Version": {
+            "title": "Reference_Genome_Version",
+            "description": "The reference genome version on which the coordinates are based, e.g., TAIR10, IRGSP-1.0, IWGSC1.0, GRCm39, GRCh38, ASM584v2.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species": {
+            "title": "Species",
+            "description": "The main species studied (common name). e.g., Rice, Mouse, E. coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species_Latin_Name": {
+            "title": "Species_Latin_Name",
+            "description": "The Latin name of the species, e.g., Oryza sativa, Mus musculus, Escherichia coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Variety": {
+            "title": "Variety",
+            "description": "The specific variety or cultivar used in the study (e.g., Nipponbare, Zhonghua 11).",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Origin_Species": {
+            "title": "Gene_Origin_Species",
+            "description": "Species in which the gene is naturally found or from which it was derived.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Phenotypic_Effect": {
+            "title": "Core_Phenotypic_Effect",
+            "description": "The main conclusion about how the focal gene affects the target metabolite/product, e.g. promotes \u03b2-carotene accumulation; reduces phytic acid content; increases oleic acid proportion.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite": {
+            "title": "Terminal_Metabolite",
+            "description": "The primary terminal metabolite, e.g., \u03b2-carotene, anthocyanin, folate, tocopherol, lysine, oleic acid, resistant starch, iron, zinc, glucosinolate.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Class": {
+            "title": "Terminal_Metabolite_Class",
+            "description": "Broad biochemical class of the terminal metabolite, e.g., carotenoid, flavonoid, vitamin, fatty acid, amino acid, alkaloid, terpenoid, polysaccharide, mineral nutrient.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Accumulation_Site": {
+            "title": "Terminal_Metabolite_Accumulation_Site",
+            "description": "Accumulation organs for terminal metabolite within a species (Note: This must be distinguished from the compound content of the species itself.)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Function": {
+            "title": "Terminal_Metabolite_Function",
+            "description": "The functions of the terminal metabolite, e.g., resistance to stress, drought, cold, pests, etc., or the treatment or alleviation of human diseases.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Promoters": {
+            "title": "Promoters",
+            "description": "Promoters and Their Types (Constitutive or Tissue-Specific)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Expression_Pattern": {
+            "title": "Expression_Pattern",
+            "description": "Tissues, developmental stages, or conditions with high gene expression, e.g., root, stress, or pathogen response.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Subcellular_Localization": {
+            "title": "Subcellular_Localization",
+            "description": "The location of the protein within the cell or subcellular fraction, e.g., Nucleus, Cell membrane, Chloroplast, Microsome.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Interacting_Proteins": {
+            "title": "Interacting_Proteins",
+            "description": "Experimentally validated interacting proteins or genes (list protein or gene name or ID, separated by semicolon ';').",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Validation_Method": {
+            "title": "Core_Validation_Method",
+            "description": "Most critical functional validation approaches supporting the gene\u2013metabolite mapping, e.g., knockout, overexpression, complementation, enzyme assay, transactivation assay, transient expression, metabolite profiling, isotope labeling.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Omics_Data": {
+            "title": "Omics_Data",
+            "description": "List the omics data types used in the study (e.g., RNA-seq, resequencing, metabolomics, single-cell) and their corresponding database accession numbers.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Environment_or_Treatment_Factor": {
+            "title": "Environment_or_Treatment_Factor",
+            "description": "Environmental or treatment conditions directly affecting interpretation of the metabolic effect, e.g., light, temperature, nutrient supply, elicitor treatment, salt stress, pathogen infection, exogenous hormone, postharvest treatment.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Breeding_Application_Value": {
+            "title": "Breeding_Application_Value",
+            "description": "Stated or inferred breeding relevance of the gene for nutritional improvement, biofortification, quality enhancement, or metabolic engineering.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Potential_Tradeoffs": {
+            "title": "Potential_Tradeoffs",
+            "description": "Growth penalty, yield change, stress susceptibility, off-target metabolic shifts.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Summary_Key_Findings_of_Core_Gene": {
+            "title": "Summary_Key_Findings_of_Core_Gene",
+            "description": "Main findings in numbered format: '1. ... 2. ... 3. ...'. Focus on nutrient metabolism causality.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Other_Important_Info": {
+            "title": "Other_Important_Info",
+            "description": "Important metabolism-related details not captured elsewhere, such as contradictory evidence, species-specific nuances, dual function, uncertain catalytic assignment, tissue-specific pathway divergence, or special caveats.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Enzyme_Name": {
+            "title": "Enzyme_Name",
+            "description": "Standard enzyme name corresponding to the focal gene product.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "EC_Number": {
+            "title": "EC_Number",
+            "description": "Enzyme_Commission number if reported or confidently inferable from the paper\u2019s enzyme assignment.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Catalyzed_Reaction_Description": {
+            "title": "Catalyzed_Reaction_Description",
+            "description": "The biochemical reaction catalyzed by the enzyme, described in plain but precise form, e.g., converts phytoene to \u03b6-carotene through desaturation; hydroxylates \u03b2-carotene to zeaxanthin.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Primary_Substrate": {
+            "title": "Primary_Substrate",
+            "description": "Main substrate(s) used by the enzyme in the relevant metabolic step.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Primary_Product": {
+            "title": "Primary_Product",
+            "description": "Immediate product(s) generated by the enzyme in the relevant step.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Biosynthetic_Pathway": {
+            "title": "Biosynthetic_Pathway",
+            "description": "Name of the metabolic or biosynthetic pathway to which the focal gene is assigned.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Metabolic_Step_Position": {
+            "title": "Metabolic_Step_Position",
+            "description": "Relative position of the enzymatic step within the pathway: upstream, midstream, downstream, terminal step, branch point, committed step, side-route, salvage/recycling step.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Pathway_Branch_or_Subpathway": {
+            "title": "Pathway_Branch_or_Subpathway",
+            "description": "Specific branch, module, or subpathway in which the enzyme functions, e.g., \u03b2-branch of carotenoid pathway; flavonol branch; tocopherol cyclization branch.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "End_Product_Connection_Type": {
+            "title": "End_Product_Connection_Type",
+            "description": "How the catalytic step connects to the target product: directly forms target product, forms immediate precursor, supplies precursor pool, diverts flux toward target product, competes with target-product branch, required for storage/modification of target product.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Rate_Limiting_or_Key_Control_Step": {
+            "title": "Rate_Limiting_or_Key_Control_Step",
+            "description": "Whether the paper supports this enzyme as a rate-limiting enzyme, key control point, committed-step enzyme, terminal determinant, branch-switch enzyme, bottleneck enzyme, or not established.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          }
+        },
+        "title": "PathwayGene",
+        "type": "object"
+      }
+    },
+    "description": "Complete model for extracting pathway gene function information from nutrient metabolism studies.",
+    "properties": {
+      "Title": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The full title of the paper.",
+        "title": "Title"
+      },
+      "Journal": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The name of the journal that published the paper.",
+        "title": "Journal"
+      },
+      "DOI": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The DOI number of the literature, excluding any URL prefix (e.g., \"https://doi.org/\"). Only extract the pure DOI string, e.g., 10.1016/j.plantsci.2024.111234.",
+        "title": "Doi"
+      },
+      "Genes": {
+        "description": "List of gene objects extracted from this study. Each gene object contains all gene-specific information including species information.",
+        "items": {
+          "$ref": "#/$defs/PathwayGene"
+        },
+        "title": "Genes",
+        "type": "array"
+      }
+    },
+    "title": "PathwayGeneExtraction",
+    "type": "object"
+  },
+  "RegulationGeneExtraction": {
+    "$defs": {
+      "RegulationGene": {
+        "description": "Individual gene object for regulation fuction in nutrient metabolism",
+        "properties": {
+          "Gene_Name": {
+            "title": "Gene_Name",
+            "description": "The name or symbol of the Core Gene, e.g., TaGS5, Pi2, BIK1.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Accession_Number": {
+            "title": "Gene_Accession_Number",
+            "description": "Accession Number (e.g., NCBI, Ensembl, Phytozome ID, LOC_*, AT*, NCBI Locus Tag). Some IDs may be in figures or tables.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Protein_Family_or_Domain": {
+            "title": "Protein_Family_or_Domain",
+            "description": "Protein family, enzyme class, TF family, domain architecture, or conserved motif relevant to the gene\u2019s function.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Reference_Genome_Version": {
+            "title": "Reference_Genome_Version",
+            "description": "The reference genome version on which the coordinates are based, e.g., TAIR10, IRGSP-1.0, IWGSC1.0, GRCm39, GRCh38, ASM584v2.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species": {
+            "title": "Species",
+            "description": "The main species studied (common name). e.g., Rice, Mouse, E. coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species_Latin_Name": {
+            "title": "Species_Latin_Name",
+            "description": "The Latin name of the species, e.g., Oryza sativa, Mus musculus, Escherichia coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Variety": {
+            "title": "Variety",
+            "description": "The specific variety or cultivar used in the study (e.g., Nipponbare, Zhonghua 11).",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Origin_Species": {
+            "title": "Gene_Origin_Species",
+            "description": "Species in which the gene is naturally found or from which it was derived.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Phenotypic_Effect": {
+            "title": "Core_Phenotypic_Effect",
+            "description": "The main conclusion about how the focal gene affects the target metabolite/product, e.g. promotes \u03b2-carotene accumulation; reduces phytic acid content; increases oleic acid proportion.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite": {
+            "title": "Terminal_Metabolite",
+            "description": "The primary terminal metabolite, e.g., \u03b2-carotene, anthocyanin, folate, tocopherol, lysine, oleic acid, resistant starch, iron, zinc, glucosinolate.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Class": {
+            "title": "Terminal_Metabolite_Class",
+            "description": "Broad biochemical class of the terminal metabolite, e.g., carotenoid, flavonoid, vitamin, fatty acid, amino acid, alkaloid, terpenoid, polysaccharide, mineral nutrient.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Accumulation_Site": {
+            "title": "Terminal_Metabolite_Accumulation_Site",
+            "description": "Accumulation organs for terminal metabolite within a species (Note: This must be distinguished from the compound content of the species itself.)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Function": {
+            "title": "Terminal_Metabolite_Function",
+            "description": "The functions of the terminal metabolite, e.g., resistance to stress, drought, cold, pests, etc., or the treatment or alleviation of human diseases.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Promoters": {
+            "title": "Promoters",
+            "description": "Promoters and Their Types (Constitutive or Tissue-Specific)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Expression_Pattern": {
+            "title": "Expression_Pattern",
+            "description": "Tissues, developmental stages, or conditions with high gene expression, e.g., root, stress, or pathogen response.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Subcellular_Localization": {
+            "title": "Subcellular_Localization",
+            "description": "The location of the protein within the cell or subcellular fraction, e.g., Nucleus, Cell membrane, Chloroplast, Microsome.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Interacting_Proteins": {
+            "title": "Interacting_Proteins",
+            "description": "Experimentally validated interacting proteins or genes (list protein or gene name or ID, separated by semicolon ';').",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Validation_Method": {
+            "title": "Core_Validation_Method",
+            "description": "Most critical functional validation approaches supporting the gene\u2013metabolite mapping, e.g., knockout, overexpression, complementation, enzyme assay, transactivation assay, transient expression, metabolite profiling, isotope labeling.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Omics_Data": {
+            "title": "Omics_Data",
+            "description": "List the omics data types used in the study (e.g., RNA-seq, resequencing, metabolomics, single-cell) and their corresponding database accession numbers.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Environment_or_Treatment_Factor": {
+            "title": "Environment_or_Treatment_Factor",
+            "description": "Environmental or treatment conditions directly affecting interpretation of the metabolic effect, e.g., light, temperature, nutrient supply, elicitor treatment, salt stress, pathogen infection, exogenous hormone, postharvest treatment.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Breeding_Application_Value": {
+            "title": "Breeding_Application_Value",
+            "description": "Stated or inferred breeding relevance of the gene for nutritional improvement, biofortification, quality enhancement, or metabolic engineering.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Potential_Tradeoffs": {
+            "title": "Potential_Tradeoffs",
+            "description": "Growth penalty, yield change, stress susceptibility, off-target metabolic shifts.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Summary_Key_Findings_of_Core_Gene": {
+            "title": "Summary_Key_Findings_of_Core_Gene",
+            "description": "Main findings in numbered format: '1. ... 2. ... 3. ...'. Focus on nutrient metabolism causality.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Other_Important_Info": {
+            "title": "Other_Important_Info",
+            "description": "Important metabolism-related details not captured elsewhere, such as contradictory evidence, species-specific nuances, dual function, uncertain catalytic assignment, tissue-specific pathway divergence, or special caveats.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Regulator_Type": {
+            "title": "Regulator_Type",
+            "description": "Type of regulator, e.g., transcription factor, signaling kinase, phosphatase, E3 ligase, transporter regulator, RNA-binding protein, chromatin modifier, miRNA-related factor, scaffold protein, hormone-response regulator, etc.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Direct_or_Indirect_Regulator": {
+            "title": "Direct_or_Indirect_Regulator",
+            "description": "Whether the gene regulates the target metabolic process directly, indirectly, or with unresolved directness.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Regulation_Mode": {
+            "title": "Regulation_Mode",
+            "description": "Mode of regulation, e.g., transcriptional activation, transcriptional repression, chromatin opening, protein stabilization, ubiquitin-mediated degradation, phosphorylation activation, dephosphorylation, RNA silencing, translation control, transport control, feedback regulation.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Upstream_Signals_or_Inputs": {
+            "title": "Upstream_Signals_or_Inputs",
+            "description": "Signals, hormones, nutrients, stresses, or developmental cues acting upstream of the regulator.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Primary_Regulatory_Targets": {
+            "title": "Primary_Regulatory_Targets",
+            "description": "The principal downstream genes, enzymes, transporters, or pathway modules regulated by the focal gene.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Regulatory_Effect_on_Target_Genes": {
+            "title": "Regulatory_Effect_on_Target_Genes",
+            "description": "Directional effect on key downstream metabolic genes, e.g., activates PSY1 and LCYB; represses FAD2; stabilizes PAP1; promotes degradation of enzyme E.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Decisive_Influence_on_Target_Product": {
+            "title": "Decisive_Influence_on_Target_Product",
+            "description": "Clear statement of why this regulator is considered decisive for the target product, e.g., master regulator, major switch, essential activator, strong repressor, condition-dependent controller, ripening-specific inducer, nutrient-responsive regulator.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Metabolic_Process_Controlled": {
+            "title": "Metabolic_Process_Controlled",
+            "description": "The controlled metabolic process, e.g., biosynthesis, degradation, transport, sequestration, precursor supply, branch selection, remodeling, storage deposition, or feedback homeostasis.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Feedback_or_Feedforward_Regulation": {
+            "title": "Feedback_or_Feedforward_Regulation",
+            "description": "Whether the regulator participates in feedback, feedforward, autoregulation, metabolite-dependent repression/activation, or homeostatic loops.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          }
+        },
+        "title": "RegulationGene",
+        "type": "object"
+      }
+    },
+    "description": "Complete model for extracting regulation gene function information from nutrient metabolism studies.",
+    "properties": {
+      "Title": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The full title of the paper.",
+        "title": "Title"
+      },
+      "Journal": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The name of the journal that published the paper.",
+        "title": "Journal"
+      },
+      "DOI": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The DOI number of the literature, excluding any URL prefix (e.g., \"https://doi.org/\"). Only extract the pure DOI string, e.g., 10.1016/j.plantsci.2024.111234.",
+        "title": "Doi"
+      },
+      "Genes": {
+        "description": "List of gene objects extracted from this study. Each gene object contains all gene-specific information including species information.",
+        "items": {
+          "$ref": "#/$defs/RegulationGene"
+        },
+        "title": "Genes",
+        "type": "array"
+      }
+    },
+    "title": "RegulationGeneExtraction",
+    "type": "object"
+  },
+  "MultipleGeneExtraction": {
+    "$defs": {
+      "CommonGene": {
+        "description": "Individual gene object for common fuction in nutrient metabolism",
+        "properties": {
+          "Gene_Name": {
+            "title": "Gene_Name",
+            "description": "The name or symbol of the Core Gene, e.g., TaGS5, Pi2, BIK1.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Accession_Number": {
+            "title": "Gene_Accession_Number",
+            "description": "Accession Number (e.g., NCBI, Ensembl, Phytozome ID, LOC_*, AT*, NCBI Locus Tag). Some IDs may be in figures or tables.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Protein_Family_or_Domain": {
+            "title": "Protein_Family_or_Domain",
+            "description": "Protein family, enzyme class, TF family, domain architecture, or conserved motif relevant to the gene\u2019s function.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Reference_Genome_Version": {
+            "title": "Reference_Genome_Version",
+            "description": "The reference genome version on which the coordinates are based, e.g., TAIR10, IRGSP-1.0, IWGSC1.0, GRCm39, GRCh38, ASM584v2.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species": {
+            "title": "Species",
+            "description": "The main species studied (common name). e.g., Rice, Mouse, E. coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species_Latin_Name": {
+            "title": "Species_Latin_Name",
+            "description": "The Latin name of the species, e.g., Oryza sativa, Mus musculus, Escherichia coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Variety": {
+            "title": "Variety",
+            "description": "The specific variety or cultivar used in the study (e.g., Nipponbare, Zhonghua 11).",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Origin_Species": {
+            "title": "Gene_Origin_Species",
+            "description": "Species in which the gene is naturally found or from which it was derived.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Phenotypic_Effect": {
+            "title": "Core_Phenotypic_Effect",
+            "description": "The main conclusion about how the focal gene affects the target metabolite/product, e.g. promotes \u03b2-carotene accumulation; reduces phytic acid content; increases oleic acid proportion.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite": {
+            "title": "Terminal_Metabolite",
+            "description": "The primary terminal metabolite, e.g., \u03b2-carotene, anthocyanin, folate, tocopherol, lysine, oleic acid, resistant starch, iron, zinc, glucosinolate.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Class": {
+            "title": "Terminal_Metabolite_Class",
+            "description": "Broad biochemical class of the terminal metabolite, e.g., carotenoid, flavonoid, vitamin, fatty acid, amino acid, alkaloid, terpenoid, polysaccharide, mineral nutrient.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Accumulation_Site": {
+            "title": "Terminal_Metabolite_Accumulation_Site",
+            "description": "Accumulation organs for terminal metabolite within a species (Note: This must be distinguished from the compound content of the species itself.)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Function": {
+            "title": "Terminal_Metabolite_Function",
+            "description": "The functions of the terminal metabolite, e.g., resistance to stress, drought, cold, pests, etc., or the treatment or alleviation of human diseases.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Promoters": {
+            "title": "Promoters",
+            "description": "Promoters and Their Types (Constitutive or Tissue-Specific)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Expression_Pattern": {
+            "title": "Expression_Pattern",
+            "description": "Tissues, developmental stages, or conditions with high gene expression, e.g., root, stress, or pathogen response.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Subcellular_Localization": {
+            "title": "Subcellular_Localization",
+            "description": "The location of the protein within the cell or subcellular fraction, e.g., Nucleus, Cell membrane, Chloroplast, Microsome.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Interacting_Proteins": {
+            "title": "Interacting_Proteins",
+            "description": "Experimentally validated interacting proteins or genes (list protein or gene name or ID, separated by semicolon ';').",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Validation_Method": {
+            "title": "Core_Validation_Method",
+            "description": "Most critical functional validation approaches supporting the gene\u2013metabolite mapping, e.g., knockout, overexpression, complementation, enzyme assay, transactivation assay, transient expression, metabolite profiling, isotope labeling.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Omics_Data": {
+            "title": "Omics_Data",
+            "description": "List the omics data types used in the study (e.g., RNA-seq, resequencing, metabolomics, single-cell) and their corresponding database accession numbers.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Environment_or_Treatment_Factor": {
+            "title": "Environment_or_Treatment_Factor",
+            "description": "Environmental or treatment conditions directly affecting interpretation of the metabolic effect, e.g., light, temperature, nutrient supply, elicitor treatment, salt stress, pathogen infection, exogenous hormone, postharvest treatment.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Breeding_Application_Value": {
+            "title": "Breeding_Application_Value",
+            "description": "Stated or inferred breeding relevance of the gene for nutritional improvement, biofortification, quality enhancement, or metabolic engineering.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Potential_Tradeoffs": {
+            "title": "Potential_Tradeoffs",
+            "description": "Growth penalty, yield change, stress susceptibility, off-target metabolic shifts.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Summary_Key_Findings_of_Core_Gene": {
+            "title": "Summary_Key_Findings_of_Core_Gene",
+            "description": "Main findings in numbered format: '1. ... 2. ... 3. ...'. Focus on nutrient metabolism causality.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Other_Important_Info": {
+            "title": "Other_Important_Info",
+            "description": "Important metabolism-related details not captured elsewhere, such as contradictory evidence, species-specific nuances, dual function, uncertain catalytic assignment, tissue-specific pathway divergence, or special caveats.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          }
+        },
+        "title": "CommonGene",
+        "type": "object"
+      },
+      "PathwayGene": {
+        "description": "Individual gene object for pathway fuction in nutrient metabolism",
+        "properties": {
+          "Gene_Name": {
+            "title": "Gene_Name",
+            "description": "The name or symbol of the Core Gene, e.g., TaGS5, Pi2, BIK1.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Accession_Number": {
+            "title": "Gene_Accession_Number",
+            "description": "Accession Number (e.g., NCBI, Ensembl, Phytozome ID, LOC_*, AT*, NCBI Locus Tag). Some IDs may be in figures or tables.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Protein_Family_or_Domain": {
+            "title": "Protein_Family_or_Domain",
+            "description": "Protein family, enzyme class, TF family, domain architecture, or conserved motif relevant to the gene\u2019s function.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Reference_Genome_Version": {
+            "title": "Reference_Genome_Version",
+            "description": "The reference genome version on which the coordinates are based, e.g., TAIR10, IRGSP-1.0, IWGSC1.0, GRCm39, GRCh38, ASM584v2.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species": {
+            "title": "Species",
+            "description": "The main species studied (common name). e.g., Rice, Mouse, E. coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species_Latin_Name": {
+            "title": "Species_Latin_Name",
+            "description": "The Latin name of the species, e.g., Oryza sativa, Mus musculus, Escherichia coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Variety": {
+            "title": "Variety",
+            "description": "The specific variety or cultivar used in the study (e.g., Nipponbare, Zhonghua 11).",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Origin_Species": {
+            "title": "Gene_Origin_Species",
+            "description": "Species in which the gene is naturally found or from which it was derived.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Phenotypic_Effect": {
+            "title": "Core_Phenotypic_Effect",
+            "description": "The main conclusion about how the focal gene affects the target metabolite/product, e.g. promotes \u03b2-carotene accumulation; reduces phytic acid content; increases oleic acid proportion.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite": {
+            "title": "Terminal_Metabolite",
+            "description": "The primary terminal metabolite, e.g., \u03b2-carotene, anthocyanin, folate, tocopherol, lysine, oleic acid, resistant starch, iron, zinc, glucosinolate.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Class": {
+            "title": "Terminal_Metabolite_Class",
+            "description": "Broad biochemical class of the terminal metabolite, e.g., carotenoid, flavonoid, vitamin, fatty acid, amino acid, alkaloid, terpenoid, polysaccharide, mineral nutrient.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Accumulation_Site": {
+            "title": "Terminal_Metabolite_Accumulation_Site",
+            "description": "Accumulation organs for terminal metabolite within a species (Note: This must be distinguished from the compound content of the species itself.)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Function": {
+            "title": "Terminal_Metabolite_Function",
+            "description": "The functions of the terminal metabolite, e.g., resistance to stress, drought, cold, pests, etc., or the treatment or alleviation of human diseases.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Promoters": {
+            "title": "Promoters",
+            "description": "Promoters and Their Types (Constitutive or Tissue-Specific)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Expression_Pattern": {
+            "title": "Expression_Pattern",
+            "description": "Tissues, developmental stages, or conditions with high gene expression, e.g., root, stress, or pathogen response.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Subcellular_Localization": {
+            "title": "Subcellular_Localization",
+            "description": "The location of the protein within the cell or subcellular fraction, e.g., Nucleus, Cell membrane, Chloroplast, Microsome.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Interacting_Proteins": {
+            "title": "Interacting_Proteins",
+            "description": "Experimentally validated interacting proteins or genes (list protein or gene name or ID, separated by semicolon ';').",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Validation_Method": {
+            "title": "Core_Validation_Method",
+            "description": "Most critical functional validation approaches supporting the gene\u2013metabolite mapping, e.g., knockout, overexpression, complementation, enzyme assay, transactivation assay, transient expression, metabolite profiling, isotope labeling.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Omics_Data": {
+            "title": "Omics_Data",
+            "description": "List the omics data types used in the study (e.g., RNA-seq, resequencing, metabolomics, single-cell) and their corresponding database accession numbers.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Environment_or_Treatment_Factor": {
+            "title": "Environment_or_Treatment_Factor",
+            "description": "Environmental or treatment conditions directly affecting interpretation of the metabolic effect, e.g., light, temperature, nutrient supply, elicitor treatment, salt stress, pathogen infection, exogenous hormone, postharvest treatment.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Breeding_Application_Value": {
+            "title": "Breeding_Application_Value",
+            "description": "Stated or inferred breeding relevance of the gene for nutritional improvement, biofortification, quality enhancement, or metabolic engineering.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Potential_Tradeoffs": {
+            "title": "Potential_Tradeoffs",
+            "description": "Growth penalty, yield change, stress susceptibility, off-target metabolic shifts.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Summary_Key_Findings_of_Core_Gene": {
+            "title": "Summary_Key_Findings_of_Core_Gene",
+            "description": "Main findings in numbered format: '1. ... 2. ... 3. ...'. Focus on nutrient metabolism causality.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Other_Important_Info": {
+            "title": "Other_Important_Info",
+            "description": "Important metabolism-related details not captured elsewhere, such as contradictory evidence, species-specific nuances, dual function, uncertain catalytic assignment, tissue-specific pathway divergence, or special caveats.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Enzyme_Name": {
+            "title": "Enzyme_Name",
+            "description": "Standard enzyme name corresponding to the focal gene product.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "EC_Number": {
+            "title": "EC_Number",
+            "description": "Enzyme_Commission number if reported or confidently inferable from the paper\u2019s enzyme assignment.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Catalyzed_Reaction_Description": {
+            "title": "Catalyzed_Reaction_Description",
+            "description": "The biochemical reaction catalyzed by the enzyme, described in plain but precise form, e.g., converts phytoene to \u03b6-carotene through desaturation; hydroxylates \u03b2-carotene to zeaxanthin.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Primary_Substrate": {
+            "title": "Primary_Substrate",
+            "description": "Main substrate(s) used by the enzyme in the relevant metabolic step.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Primary_Product": {
+            "title": "Primary_Product",
+            "description": "Immediate product(s) generated by the enzyme in the relevant step.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Biosynthetic_Pathway": {
+            "title": "Biosynthetic_Pathway",
+            "description": "Name of the metabolic or biosynthetic pathway to which the focal gene is assigned.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Metabolic_Step_Position": {
+            "title": "Metabolic_Step_Position",
+            "description": "Relative position of the enzymatic step within the pathway: upstream, midstream, downstream, terminal step, branch point, committed step, side-route, salvage/recycling step.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Pathway_Branch_or_Subpathway": {
+            "title": "Pathway_Branch_or_Subpathway",
+            "description": "Specific branch, module, or subpathway in which the enzyme functions, e.g., \u03b2-branch of carotenoid pathway; flavonol branch; tocopherol cyclization branch.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "End_Product_Connection_Type": {
+            "title": "End_Product_Connection_Type",
+            "description": "How the catalytic step connects to the target product: directly forms target product, forms immediate precursor, supplies precursor pool, diverts flux toward target product, competes with target-product branch, required for storage/modification of target product.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Rate_Limiting_or_Key_Control_Step": {
+            "title": "Rate_Limiting_or_Key_Control_Step",
+            "description": "Whether the paper supports this enzyme as a rate-limiting enzyme, key control point, committed-step enzyme, terminal determinant, branch-switch enzyme, bottleneck enzyme, or not established.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          }
+        },
+        "title": "PathwayGene",
+        "type": "object"
+      },
+      "RegulationGene": {
+        "description": "Individual gene object for regulation fuction in nutrient metabolism",
+        "properties": {
+          "Gene_Name": {
+            "title": "Gene_Name",
+            "description": "The name or symbol of the Core Gene, e.g., TaGS5, Pi2, BIK1.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Accession_Number": {
+            "title": "Gene_Accession_Number",
+            "description": "Accession Number (e.g., NCBI, Ensembl, Phytozome ID, LOC_*, AT*, NCBI Locus Tag). Some IDs may be in figures or tables.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Protein_Family_or_Domain": {
+            "title": "Protein_Family_or_Domain",
+            "description": "Protein family, enzyme class, TF family, domain architecture, or conserved motif relevant to the gene\u2019s function.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Reference_Genome_Version": {
+            "title": "Reference_Genome_Version",
+            "description": "The reference genome version on which the coordinates are based, e.g., TAIR10, IRGSP-1.0, IWGSC1.0, GRCm39, GRCh38, ASM584v2.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species": {
+            "title": "Species",
+            "description": "The main species studied (common name). e.g., Rice, Mouse, E. coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Species_Latin_Name": {
+            "title": "Species_Latin_Name",
+            "description": "The Latin name of the species, e.g., Oryza sativa, Mus musculus, Escherichia coli.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Variety": {
+            "title": "Variety",
+            "description": "The specific variety or cultivar used in the study (e.g., Nipponbare, Zhonghua 11).",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Gene_Origin_Species": {
+            "title": "Gene_Origin_Species",
+            "description": "Species in which the gene is naturally found or from which it was derived.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Phenotypic_Effect": {
+            "title": "Core_Phenotypic_Effect",
+            "description": "The main conclusion about how the focal gene affects the target metabolite/product, e.g. promotes \u03b2-carotene accumulation; reduces phytic acid content; increases oleic acid proportion.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite": {
+            "title": "Terminal_Metabolite",
+            "description": "The primary terminal metabolite, e.g., \u03b2-carotene, anthocyanin, folate, tocopherol, lysine, oleic acid, resistant starch, iron, zinc, glucosinolate.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Class": {
+            "title": "Terminal_Metabolite_Class",
+            "description": "Broad biochemical class of the terminal metabolite, e.g., carotenoid, flavonoid, vitamin, fatty acid, amino acid, alkaloid, terpenoid, polysaccharide, mineral nutrient.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Accumulation_Site": {
+            "title": "Terminal_Metabolite_Accumulation_Site",
+            "description": "Accumulation organs for terminal metabolite within a species (Note: This must be distinguished from the compound content of the species itself.)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Terminal_Metabolite_Function": {
+            "title": "Terminal_Metabolite_Function",
+            "description": "The functions of the terminal metabolite, e.g., resistance to stress, drought, cold, pests, etc., or the treatment or alleviation of human diseases.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Promoters": {
+            "title": "Promoters",
+            "description": "Promoters and Their Types (Constitutive or Tissue-Specific)",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Expression_Pattern": {
+            "title": "Expression_Pattern",
+            "description": "Tissues, developmental stages, or conditions with high gene expression, e.g., root, stress, or pathogen response.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Subcellular_Localization": {
+            "title": "Subcellular_Localization",
+            "description": "The location of the protein within the cell or subcellular fraction, e.g., Nucleus, Cell membrane, Chloroplast, Microsome.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Interacting_Proteins": {
+            "title": "Interacting_Proteins",
+            "description": "Experimentally validated interacting proteins or genes (list protein or gene name or ID, separated by semicolon ';').",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Core_Validation_Method": {
+            "title": "Core_Validation_Method",
+            "description": "Most critical functional validation approaches supporting the gene\u2013metabolite mapping, e.g., knockout, overexpression, complementation, enzyme assay, transactivation assay, transient expression, metabolite profiling, isotope labeling.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Omics_Data": {
+            "title": "Omics_Data",
+            "description": "List the omics data types used in the study (e.g., RNA-seq, resequencing, metabolomics, single-cell) and their corresponding database accession numbers.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Environment_or_Treatment_Factor": {
+            "title": "Environment_or_Treatment_Factor",
+            "description": "Environmental or treatment conditions directly affecting interpretation of the metabolic effect, e.g., light, temperature, nutrient supply, elicitor treatment, salt stress, pathogen infection, exogenous hormone, postharvest treatment.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Breeding_Application_Value": {
+            "title": "Breeding_Application_Value",
+            "description": "Stated or inferred breeding relevance of the gene for nutritional improvement, biofortification, quality enhancement, or metabolic engineering.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Potential_Tradeoffs": {
+            "title": "Potential_Tradeoffs",
+            "description": "Growth penalty, yield change, stress susceptibility, off-target metabolic shifts.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Summary_Key_Findings_of_Core_Gene": {
+            "title": "Summary_Key_Findings_of_Core_Gene",
+            "description": "Main findings in numbered format: '1. ... 2. ... 3. ...'. Focus on nutrient metabolism causality.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Other_Important_Info": {
+            "title": "Other_Important_Info",
+            "description": "Important metabolism-related details not captured elsewhere, such as contradictory evidence, species-specific nuances, dual function, uncertain catalytic assignment, tissue-specific pathway divergence, or special caveats.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Regulator_Type": {
+            "title": "Regulator_Type",
+            "description": "Type of regulator, e.g., transcription factor, signaling kinase, phosphatase, E3 ligase, transporter regulator, RNA-binding protein, chromatin modifier, miRNA-related factor, scaffold protein, hormone-response regulator, etc.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Direct_or_Indirect_Regulator": {
+            "title": "Direct_or_Indirect_Regulator",
+            "description": "Whether the gene regulates the target metabolic process directly, indirectly, or with unresolved directness.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Regulation_Mode": {
+            "title": "Regulation_Mode",
+            "description": "Mode of regulation, e.g., transcriptional activation, transcriptional repression, chromatin opening, protein stabilization, ubiquitin-mediated degradation, phosphorylation activation, dephosphorylation, RNA silencing, translation control, transport control, feedback regulation.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Upstream_Signals_or_Inputs": {
+            "title": "Upstream_Signals_or_Inputs",
+            "description": "Signals, hormones, nutrients, stresses, or developmental cues acting upstream of the regulator.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Primary_Regulatory_Targets": {
+            "title": "Primary_Regulatory_Targets",
+            "description": "The principal downstream genes, enzymes, transporters, or pathway modules regulated by the focal gene.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Regulatory_Effect_on_Target_Genes": {
+            "title": "Regulatory_Effect_on_Target_Genes",
+            "description": "Directional effect on key downstream metabolic genes, e.g., activates PSY1 and LCYB; represses FAD2; stabilizes PAP1; promotes degradation of enzyme E.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Decisive_Influence_on_Target_Product": {
+            "title": "Decisive_Influence_on_Target_Product",
+            "description": "Clear statement of why this regulator is considered decisive for the target product, e.g., master regulator, major switch, essential activator, strong repressor, condition-dependent controller, ripening-specific inducer, nutrient-responsive regulator.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Metabolic_Process_Controlled": {
+            "title": "Metabolic_Process_Controlled",
+            "description": "The controlled metabolic process, e.g., biosynthesis, degradation, transport, sequestration, precursor supply, branch selection, remodeling, storage deposition, or feedback homeostasis.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          },
+          "Feedback_or_Feedforward_Regulation": {
+            "title": "Feedback_or_Feedforward_Regulation",
+            "description": "Whether the regulator participates in feedback, feedforward, autoregulation, metabolite-dependent repression/activation, or homeostatic loops.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": "NA"
+          }
+        },
+        "title": "RegulationGene",
+        "type": "object"
+      }
+    },
+    "description": "Complete model for extracting common, pathway, and regulation gene function information from nutrient metabolism studies.",
+    "properties": {
+      "Title": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The full title of the paper.",
+        "title": "Title"
+      },
+      "Journal": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The name of the journal that published the paper.",
+        "title": "Journal"
+      },
+      "DOI": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": "NA",
+        "description": "The DOI number of the literature, excluding any URL prefix (e.g., \"https://doi.org/\"). Only extract the pure DOI string, e.g., 10.1016/j.plantsci.2024.111234.",
+        "title": "Doi"
+      },
+      "Common_Genes": {
+        "description": "List of common gene objects extracted from this study. Each gene object contains all gene-specific information including species information.",
+        "items": {
+          "$ref": "#/$defs/CommonGene"
+        },
+        "title": "Common Genes",
+        "type": "array"
+      },
+      "Pathway_Genes": {
+        "description": "List of pathway gene objects extracted from this study. Each gene object contains all gene-specific information including species information.",
+        "items": {
+          "$ref": "#/$defs/PathwayGene"
+        },
+        "title": "Pathway Genes",
+        "type": "array"
+      },
+      "Regulation_Genes": {
+        "description": "List of regulation gene objects extracted from this study. Each gene object contains all gene-specific information including species information.",
+        "items": {
+          "$ref": "#/$defs/RegulationGene"
+        },
+        "title": "Regulation Genes",
+        "type": "array"
+      }
+    },
+    "title": "MultipleGeneExtraction",
+    "type": "object"
+  }
+}

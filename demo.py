@@ -8,75 +8,62 @@ load_dotenv()
 client = OpenAI()
 MODEL = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
 
-# 定义工具函数
-def get_weather(city: str) -> str:
-    weather_data = {
-        "北京": "晴天，25°C",
-        "上海": "多云，22°C",
-        "广州": "小雨，28°C",
+# ── tool registry ──────────────────────────────────────────
+registry = {}  # { "func_name": {"func": callable, "schema": dict} }
+
+def register(func, description, parameters):
+    """注册一个工具：把函数和它的 schema 统一存到 registry"""
+    registry[func.__name__] = {
+        "func": func,
+        "schema": {
+            "type": "function",
+            "function": {
+                "name": func.__name__,
+                "description": description,
+                "parameters": parameters,
+            }
+        }
     }
-    return weather_data.get(city, f"{city}：暂无数据")
+
+# ── 工具函数 ───────────────────────────────────────────────
+def get_weather(city: str) -> str:
+    data = {"北京": "晴天，25°C", "上海": "多云，22°C", "广州": "小雨，28°C"}
+    return data.get(city, f"{city}：暂无数据")
 
 def get_stock_price(symbol: str) -> str:
-    stock_data = {
-        "AAPL": "$189.50",
-        "TSLA": "$245.30",
-        "GOOGL": "$178.20",
-    }
-    return stock_data.get(symbol.upper(), f"{symbol}：暂无数据")
+    data = {"AAPL": "$189.50", "TSLA": "$245.30", "GOOGL": "$178.20"}
+    return data.get(symbol.upper(), f"{symbol}：暂无数据")
 
-tools = [
-    {
-        "type": "function",
-        "function": {
-            "name": "get_weather",
-            "description": "获取指定城市的天气信息",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "city": {"type": "string", "description": "城市名称，如：北京"}
-                },
-                "required": ["city"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "get_stock_price",
-            "description": "获取指定股票的当前价格",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "symbol": {"type": "string", "description": "股票代码，如：AAPL"}
-                },
-                "required": ["symbol"]
-            }
-        }
-    }
-]
+# ── 注册工具（只需改这里，tools 和 available_functions 自动同步）──
+register(get_weather, "获取指定城市的天气信息", {
+    "type": "object",
+    "properties": {"city": {"type": "string", "description": "城市名称，如：北京"}},
+    "required": ["city"]
+})
 
-available_functions = {
-    "get_weather": get_weather,
-    "get_stock_price": get_stock_price,
-}
+register(get_stock_price, "获取指定股票的当前价格", {
+    "type": "object",
+    "properties": {"symbol": {"type": "string", "description": "股票代码，如：AAPL"}},
+    "required": ["symbol"]
+})
 
-# 同时触发两个工具的 query
-messages = [{"role": "user", "content": "苹果(AAPL)的天气怎么样"}]
+# ── 从 registry 自动派生出这两个变量（不用手动维护）──────────
+tools = [v["schema"] for v in registry.values()]
+available_functions = {k: v["func"] for k, v in registry.items()}
 
-# Round 1
-response = client.chat.completions.create(
-    model=MODEL,
-    messages=messages,
-    tools=tools,
-)
+print("已注册的工具:", list(registry.keys()))
+print()
 
+# ── 主流程 ─────────────────────────────────────────────────
+messages = [{"role": "user", "content": "北京今天天气怎么样？顺便查一下苹果(AAPL)的股价"}]
+
+response = client.chat.completions.create(model=MODEL, messages=messages, tools=tools)
 msg = response.choices[0].message
+
 print("=== Round 1 返回 ===")
 print(f"tool_calls 数量: {len(msg.tool_calls) if msg.tool_calls else 0}")
 print()
 
-# 执行所有 tool_calls（并行）
 if msg.tool_calls:
     messages.append(msg)
     for tool_call in msg.tool_calls:
@@ -88,17 +75,9 @@ if msg.tool_calls:
         print(f"返回: {result}")
         print()
 
-        messages.append({
-            "role": "tool",
-            "tool_call_id": tool_call.id,
-            "content": result,
-        })
+        messages.append({"role": "tool", "tool_call_id": tool_call.id, "content": result})
 
-    # Round 2
-    final_response = client.chat.completions.create(
-        model=MODEL,
-        messages=messages,
-    )
+    final_response = client.chat.completions.create(model=MODEL, messages=messages)
     print("=== 模型最终回答 ===")
     print(final_response.choices[0].message.content)
 else:
